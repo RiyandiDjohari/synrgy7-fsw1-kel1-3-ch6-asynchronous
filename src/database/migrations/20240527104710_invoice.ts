@@ -4,6 +4,7 @@ export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable("invoice", (table: Knex.TableBuilder) => {
     table.increments("id").primary();
     table.integer("amount").notNullable();
+    table.decimal("total_invoice").notNullable();
     table
       .integer("type_invoice_id")
       .unsigned()
