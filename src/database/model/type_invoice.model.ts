@@ -11,17 +11,16 @@ export class TypeInvoiceModel extends Model {
   }
   static get relationMappings() {
     return {
-        invoice: {
-            relation: Model.BelongsToOneRelation,
-            modelClass: InvoiceModel,
-            join: {
-                from : 'type_invoice.id',
-                to : 'invoice.type_invoice_id'
-            }
-        }
-    }
+      invoice: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: InvoiceModel,
+        join: {
+          from: "type_invoice.id",
+          to: "invoice.type_invoice_id",
+        },
+      },
+    };
   }
-
 }
 
 export type TypeInvoice = ModelObject<TypeInvoiceModel>;
